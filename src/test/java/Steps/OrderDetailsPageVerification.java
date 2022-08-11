@@ -60,4 +60,6 @@ public class OrderDetailsPageVerification {
         String actualOrderNum = orderHistoryPage.getOderNumber();
         Assert.assertTrue(actualOrderNum.contains(ordNum));
     }
+
+
 }
