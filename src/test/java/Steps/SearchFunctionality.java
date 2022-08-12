@@ -35,6 +35,7 @@ public class SearchFunctionality {
 
     @Then("Check the search product {string}")
     public void checkTheSearchProduct(String pdName) {
-        Assert.assertTrue(searchPage.productFound());
+        String acName = searchPage.productFound();
+        Assert.assertTrue(acName.contains(pdName));
     }
 }

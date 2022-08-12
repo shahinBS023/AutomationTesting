@@ -35,13 +35,14 @@ public class MyAppHook {
     }
 
     @After(order = 1)
-    public void tearDown(Scenario scenario){
-        if (scenario.isFailed()){
-            String ssName = scenario.getName().replace(" ","_");
-            byte[] sourcePath = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
-            scenario.attach("target/screenshot", "photo.png", ssName);
-        }
+    public void tearDown(Scenario scenario) {
+        if (scenario.isFailed()) {
+            // take screenshot:
+            String screenshotName = scenario.getName().replaceAll(" ", "_");
+            byte[] sourcePath = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+            scenario.attach(sourcePath, "image/png", screenshotName);
 
+        }
     }
 
 

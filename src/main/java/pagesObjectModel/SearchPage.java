@@ -22,7 +22,7 @@ public class SearchPage {
         driver.findElement(pd).click();
     }
 
-    public boolean productFound(){
+    public String productFound(){
 //        String pdXpath = "//a[text()='"+ pdName + "']";
 //        System.out.println(pdXpath);
 //        By productLink = By.xpath(pdXpath);
@@ -39,7 +39,7 @@ public class SearchPage {
 //        actions.perform();
 
         //js.executeScript("arguments[0].scrollIntoView();", productTitleLink);
-        return driver.findElement(productTitleLink).isDisplayed();
+        return driver.findElement(productTitleLink).getText();
     }
 
 
