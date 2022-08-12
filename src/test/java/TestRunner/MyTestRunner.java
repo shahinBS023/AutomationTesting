@@ -10,8 +10,9 @@ import org.junit.runner.RunWith;
         features = {"src/test/resources/Steps"},
         glue = {"Steps"},
         plugin = {"pretty",
-                "html:target/cucumber-report/nopCommerce-pretty.html",
-                "json:target/cucumber-report/nopCommerce.json"
+                "html:test-output/cucumber-report/nopCommerce-pretty.html",
+                "json:test-output/cucumber-report/nopCommerce.json",
+                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
         }
 )
 
