@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         features = {"src/test/resources/Steps"},
         glue = {"Steps"},
         plugin = {"pretty",
-                "html:target/cucumber-report/nopCommerce-pretty",
+                "html:target/cucumber-report/nopCommerce-pretty.html",
                 "json:target/cucumber-report/nopCommerce.json"
         }
 )
