@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = {"src/test/resources/Steps/ContactUsPage.feature"},
+        features = {"src/test/resources/Steps"},
         glue = {"Steps"},
         plugin = {"pretty",
                 "html:target/cucumber-report/nopCommerce-pretty",
@@ -16,6 +16,5 @@ import org.junit.runner.RunWith;
 )
 
 public class MyTestRunner {
-
 
 }
