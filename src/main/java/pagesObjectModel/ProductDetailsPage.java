@@ -20,7 +20,7 @@ public class ProductDetailsPage {
     public void clickEmailFriendBtn(){
         driver.findElement(emailFriendBtn).click();
     }
-    private String getTitle(){
+    public String getTitle(){
         return driver.getTitle();
     }
 

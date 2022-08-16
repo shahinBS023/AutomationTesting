@@ -1,6 +1,7 @@
 package pagesObjectModel;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -23,7 +24,7 @@ public class HomePage {
     private final By searchBtn = By.xpath("//button[contains(@class,'search-box-button')]");
     private final By computerCategory = By.xpath("(//a[text()='Computers '])[1]");
     private final By noteBook = By.xpath("(//a[text()='Notebooks '])[1]");
-    private final By noteBookHp = By.xpath("(//a[text()='HP Spectre XT Pro UltraBook'])[2]");
+    private final By noteBookHp = By.xpath("/html/body/div[6]/div[3]/div/div[3]/div/div[2]/div[2]/div[2]/div/div/div[4]/div/div[1]/a/img");
 
 
     public String getHomePageTitle(){
@@ -69,9 +70,8 @@ public class HomePage {
 
     public void clickHpNotebook(){
         WebElement e = driver.findElement(noteBookHp);
-        Actions actions = new Actions(driver);
-        actions.scrollToElement(e);
-        actions.perform();
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true);", e);
         e.click();
     }
 
