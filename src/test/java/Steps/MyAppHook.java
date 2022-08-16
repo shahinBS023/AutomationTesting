@@ -4,6 +4,7 @@ import driver.DriverManager;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
+import org.junit.Assume;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -16,6 +17,10 @@ public class MyAppHook {
     public ConfigReader configReader;
     public DriverManager driverManager;
 
+    @Before(value = "@skip", order = 0)
+    public void skipScenario(){
+        Assume.assumeTrue(false);
+    }
     @Before(order = 0)
     public void getProperty(){
             configReader = new ConfigReader();

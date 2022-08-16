@@ -1,5 +1,6 @@
 Feature: Validate the contact us feature
 
+  @skip
   Scenario Outline: Get contact data from the excel sheet
     Given Go to the contact us page "https://localhost:44369/contactus"
     Then Check the contact us page title "Your store. Contact Us"
