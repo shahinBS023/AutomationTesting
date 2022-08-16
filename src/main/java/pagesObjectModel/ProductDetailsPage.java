@@ -11,13 +11,17 @@ public class ProductDetailsPage {
     }
 
     private By productTitleLocation = By.xpath("//*[@id=\"product-details-form\"]/div[2]/div[1]/div[2]/div[1]/h1");
+    private By emailFriendBtn = By.xpath("//button[@class='button-2 email-a-friend-button']");
 
     public String productTitle(){
         return driver.findElement(productTitleLocation).getText();
     }
 
-    public String productTitle(By pd){
-        return driver.findElement(pd).getText();
+    public void clickEmailFriendBtn(){
+        driver.findElement(emailFriendBtn).click();
+    }
+    private String getTitle(){
+        return driver.getTitle();
     }
 
 }

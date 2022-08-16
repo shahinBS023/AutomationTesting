@@ -9,7 +9,7 @@ import org.testng.Assert;
 import pagesObjectModel.HomePage;
 import pagesObjectModel.ProductDetailsPage;
 
-public class ProductDetails {
+public class ProductDetailsFunctionality {
 
     WebDriver driver = DriverManager.getDriver();
     private HomePage homePage = new HomePage(driver);

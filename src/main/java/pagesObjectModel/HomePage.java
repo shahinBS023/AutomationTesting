@@ -5,6 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
+import javax.lang.model.element.Element;
+import java.util.concurrent.TimeUnit;
+
 public class HomePage {
 
     private final WebDriver driver;
@@ -18,6 +21,10 @@ public class HomePage {
     private final By myAccountUrl = By.xpath("//a[contains(@class,'ico-account')]");
     private final By searchBox = By.xpath("//*[@id='small-searchterms']");
     private final By searchBtn = By.xpath("//button[contains(@class,'search-box-button')]");
+    private final By computerCategory = By.xpath("(//a[text()='Computers '])[1]");
+    private final By noteBook = By.xpath("(//a[text()='Notebooks '])[1]");
+    private final By noteBookHp = By.xpath("(//a[text()='HP Spectre XT Pro UltraBook'])[2]");
+
 
     public String getHomePageTitle(){
         return driver.getTitle();
@@ -48,6 +55,27 @@ public class HomePage {
     public void clickSearchBtn(){
         driver.findElement(searchBtn).click();
     }
+
+    public void hoverToComputer(){
+        Actions action = new Actions(driver);
+        WebElement e = driver.findElement(computerCategory);
+        action.moveToElement(e).perform();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    }
+
+    public void clickNotebook(){
+        driver.findElement(noteBook).click();
+    }
+
+    public void clickHpNotebook(){
+        WebElement e = driver.findElement(noteBookHp);
+        Actions actions = new Actions(driver);
+        actions.scrollToElement(e);
+        actions.perform();
+        e.click();
+    }
+
+
 
 
 
