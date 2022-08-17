@@ -19,6 +19,7 @@ public class HomePage {
     private final By targetProduct = By.xpath("/html/body/div[6]/div[3]/div/div/div/div/div[4]/div[2]/div[1]/div/div[2]/h2/a");
     private final By loginUrl = By.xpath("//a[contains(@class,'ico-login')]");
     private final By logOutUrl = By.xpath("//a[contains(@class,'ico-logout')]");
+    private final By wishlist = By.xpath("//span[@class='wishlist-label']");
     private final By myAccountUrl = By.xpath("//a[contains(@class,'ico-account')]");
     private final By searchBox = By.xpath("//*[@id='small-searchterms']");
     private final By searchBtn = By.xpath("//button[contains(@class,'search-box-button')]");
@@ -57,6 +58,11 @@ public class HomePage {
         driver.findElement(searchBtn).click();
     }
 
+    public void performSearch(String pdName){
+        driver.findElement(searchBox).sendKeys(pdName);
+        driver.findElement(searchBtn).click();
+    }
+
     public void hoverToComputer(){
         Actions action = new Actions(driver);
         WebElement e = driver.findElement(computerCategory);
@@ -66,6 +72,10 @@ public class HomePage {
 
     public void clickNotebook(){
         driver.findElement(noteBook).click();
+    }
+
+    public void clickWishlist(){
+        driver.findElement(wishlist).click();
     }
 
     public void clickHpNotebook(){
