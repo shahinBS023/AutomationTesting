@@ -3,14 +3,18 @@ package driver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class DriverManager {
 
     //public WebDriver driver;
     public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<>();
-
+    HashMap<String, Object> prefs = new HashMap<String, Object>();
     /**
      * This method is used to initialize the thradlocal driver on the basis of given
      * browser
@@ -25,7 +29,14 @@ public class DriverManager {
 
         if (browser.equals("chrome")){
             WebDriverManager.chromedriver().setup();
-            tlDriver.set(new ChromeDriver());
+
+            ChromeOptions options = new ChromeOptions();
+            String downloadPath = System.getProperty("user.dir")+"\\DownloadedFile\\";
+            prefs.put("download.default_directory", downloadPath );
+            options.setExperimentalOption("prefs", prefs);
+
+            tlDriver.set(new ChromeDriver(options));
+
         } else if (browser.equals("edge")) {
             WebDriverManager.edgedriver().setup();
             tlDriver.set(new EdgeDriver());
