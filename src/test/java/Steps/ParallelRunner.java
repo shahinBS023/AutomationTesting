@@ -13,7 +13,7 @@ import org.testng.annotations.DataProvider;
                 "rerun:target/failedScenario.txt"
         },
         monochrome = true,
-        //tags = "@test",
+        tags = "@test",
         glue = { "Steps" },
         features = { "src/test/resources/Steps" }
 

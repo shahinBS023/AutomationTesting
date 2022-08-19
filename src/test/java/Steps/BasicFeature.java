@@ -44,6 +44,4 @@ public class BasicFeature {
         loginPage.clickLoginBtn();
     }
 
-
-
 }
