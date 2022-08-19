@@ -1,7 +1,7 @@
 Feature: Email a product details to a friend
 
   Scenario: Email a product without user login
-    Given Goto the home page "https://localhost:44369/"
+    Given Goto home page "https://localhost:44369/"
     Then Hover Computer category
     And Click on the Notebook category
     And Click a product name of HP Spectre XT Pro UltraBook
@@ -18,7 +18,7 @@ Feature: Email a product details to a friend
     Given Goto login page
     Then Give login credential "1234@5678.com" and "12345678"
     And Click on Login Button
-    Then Goto the home page "https://localhost:44369/"
+    Then Goto home page "https://localhost:44369/"
     Then Hover Computer category
     And Click on the Notebook category
     And Click a product name of HP Spectre XT Pro UltraBook

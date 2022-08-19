@@ -23,23 +23,6 @@ public class OrderDetailsPageVerification {
     private OrderHistoryPage orderHistoryPage = new OrderHistoryPage(driver);
 
 
-
-    @Given("Goto login page")
-    public void gotoLoginPage() {
-        driver.navigate().to("https://localhost:44369/login");
-    }
-
-    @Then("Give login credential {string} and {string}")
-    public void giveLoginCredentialAnd(String email, String pass) {
-        loginPage.sendEmail(email);
-        loginPage.sendPass(pass);
-    }
-
-    @And("Click on Login Button")
-    public void clickOnLoginButton() {
-        loginPage.clickLoginBtn();
-    }
-
     @Given("Click MyAccount page from home page")
     public void clickMyAccountPageFromHomePage() {
         homePage.clickMyAccountUrl();

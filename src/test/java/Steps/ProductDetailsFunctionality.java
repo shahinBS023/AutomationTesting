@@ -15,18 +15,6 @@ public class ProductDetailsFunctionality {
     private HomePage homePage = new HomePage(driver);
     private ProductDetailsPage productDetailsPage = new ProductDetailsPage(driver);
 
-    @Given("Goto home page")
-    public void gotoHomePage() {
-        driver.navigate().to("https://localhost:44369/");
-    }
-
-    @Then("Check the home page title {string}")
-    public void checkTheHomePageTitle(String homePageTitle) {
-        String actualTitle = driver.getTitle();
-        System.out.println(actualTitle + " " + homePageTitle);
-        Assert.assertTrue(actualTitle.contains(homePageTitle));
-    }
-
     @And("Click on product")
     public void clickOnProduct() {
         homePage.clickProduct();

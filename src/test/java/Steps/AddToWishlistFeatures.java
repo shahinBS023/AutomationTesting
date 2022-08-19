@@ -17,10 +17,7 @@ public class AddToWishlistFeatures {
     HomePage homePage = new HomePage(driver);
     SearchPage searchPage = new SearchPage(driver);
     WishlistPage wishlistPage = new WishlistPage(driver);
-    @Given("goto home page {string}")
-    public void gotoHomePage(String url) {
-        driver.navigate().to(url);
-    }
+
     @Then("search first product {string}")
     public void searchFirstProduct(String product) {
         homePage.performSearch(product);
