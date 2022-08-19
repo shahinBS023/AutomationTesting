@@ -21,6 +21,7 @@ public class MyAppHook {
     public void skipScenario(){
         Assume.assumeTrue(false);
     }
+
     @Before(order = 0)
     public void getProperty(){
             configReader = new ConfigReader();

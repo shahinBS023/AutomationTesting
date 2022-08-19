@@ -47,8 +47,6 @@ public class ContactUsVerification {
 
     }
 
-
-
     @And("click the submit button")
     public void clickTheSubmitButton() {
         contactUs.clickSubmitBtn();

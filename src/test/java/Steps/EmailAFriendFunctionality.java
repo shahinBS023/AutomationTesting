@@ -15,10 +15,6 @@ public class EmailAFriendFunctionality {
     HomePage homePage = new HomePage(driver);
     ProductDetailsPage productDetailsPage = new ProductDetailsPage(driver);
     EmailFriendPage emailFriendPage = new EmailFriendPage(driver);
-    @Given("Goto the home page {string}")
-    public void Goto_the_home_page(String url){
-        driver.navigate().to(url);
-    }
 
     @Then("Hover Computer category")
     public void hoverComputerCategory() {
