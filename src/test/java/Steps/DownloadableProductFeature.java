@@ -19,8 +19,8 @@ public class DownloadableProductFeature {
         driver.navigate().to(url);
     }
 
-    @Then("Check any downloadable product present there on not")
-    public void checkAnyDownloadableProductPresentThereOnNot() {
+    @Then("Check any downloadable product present there or not")
+    public void checkAnyDownloadableProductPresentThereOrNot() {
         Assert.assertTrue(downloadableProductPage.checkDownloadBtn());
     }
 

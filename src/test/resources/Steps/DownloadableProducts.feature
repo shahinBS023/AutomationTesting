@@ -7,7 +7,7 @@ Feature: Check Downloadable product working
 
   Scenario: Download a product and check it
     Given Goto downloadable product page "https://localhost:44369/customer/downloadableproducts"
-    Then Check any downloadable product present there on not
+    Then Check any downloadable product present there or not
     Then Click the download button
     And Check product is downloaded or not
 
