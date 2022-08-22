@@ -1,4 +1,3 @@
-@test
 Feature: Add product to Cart
 
   Background: Add product to the cart

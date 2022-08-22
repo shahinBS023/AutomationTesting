@@ -13,6 +13,7 @@ public class SearchPage {
 
     private By productTitleLink = By.xpath("/html/body/div[6]/div[3]/div/div[2]/div/div[2]/div[3]/div/div[2]/div/div/div/div/div[2]/h2/a");
     private By firstProduct = By.xpath("//a[text()='Apple iCam']");
+    private By appleICam = By.xpath("//a[text()='Apple iCam']");
     private By secondProduct = By.xpath("//a[text()='Flower Girl Bracelet']");
     private By wishlistBtn = By.xpath("//button[@class='button-2 add-to-wishlist-button']");
     private By addToCartBtn = By.xpath("//button[@class='button-2 product-box-add-to-cart-button' and text()='Add to cart']");
@@ -58,6 +59,9 @@ public class SearchPage {
 
     public void clickAddToCartBtn(){
         driver.findElement(addToCartBtn).click();
+    }
+    public void clickAppleICam(){
+        driver.findElement(appleICam).click();
     }
 
 

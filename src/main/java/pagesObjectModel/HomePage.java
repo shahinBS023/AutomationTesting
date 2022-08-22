@@ -29,6 +29,7 @@ public class HomePage {
     private final By electronicCategory = By.xpath("(//a[text()='Electronics '])[1]");
     private final By cameraAndPhotoCategory = By.xpath("(//a[text()='Camera & photo '])[1]");
     private final By shoppingCart = By.xpath("//span[@class='cart-label' and text()='Shopping cart']");
+    private final By recentlyViewedProducts = By.xpath("//a[text()='Recently viewed products']");
 
 
 
@@ -106,7 +107,13 @@ public class HomePage {
         driver.findElement(shoppingCart).click();
     }
 
-
+    public void clickRecentlyViewedProducts(){
+        // Scroll to a element
+        WebElement e = driver.findElement(recentlyViewedProducts);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true);", e);
+        e.click();
+    }
 
 
 
