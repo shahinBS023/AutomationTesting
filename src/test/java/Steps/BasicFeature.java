@@ -30,6 +30,7 @@ public class BasicFeature {
 
     @Given("Goto login page")
     public void gotoLoginPage() {
+        System.out.println("Login test");
         driver.navigate().to("https://localhost:44369/login");
     }
 
@@ -40,8 +41,10 @@ public class BasicFeature {
     }
 
     @And("Click on Login Button")
-    public void clickOnLoginButton() {
+    public void clickOnLoginButton() throws InterruptedException {
         loginPage.clickLoginBtn();
+        Thread.sleep(2000);
+
     }
 
 }
