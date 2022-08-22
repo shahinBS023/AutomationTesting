@@ -1,3 +1,4 @@
+@test
 Feature: Email a product details to a friend
 
   Scenario: Email a product without user login
