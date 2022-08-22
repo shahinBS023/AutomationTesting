@@ -28,6 +28,7 @@ public class HomePage {
     private final By noteBookHp = By.xpath("/html/body/div[6]/div[3]/div/div[3]/div/div[2]/div[2]/div[2]/div/div/div[4]/div/div[1]/a/img");
     private final By electronicCategory = By.xpath("(//a[text()='Electronics '])[1]");
     private final By cameraAndPhotoCategory = By.xpath("(//a[text()='Camera & photo '])[1]");
+    private final By shoppingCart = By.xpath("//span[@class='cart-label' and text()='Shopping cart']");
 
 
 
@@ -99,6 +100,10 @@ public class HomePage {
         WebElement e = driver.findElement(electronicCategory);
         action.moveToElement(e).perform();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    }
+
+    public void clickShoppingCart(){
+        driver.findElement(shoppingCart).click();
     }
 
 

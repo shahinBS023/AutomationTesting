@@ -15,6 +15,8 @@ public class SearchPage {
     private By firstProduct = By.xpath("//a[text()='Apple iCam']");
     private By secondProduct = By.xpath("//a[text()='Flower Girl Bracelet']");
     private By wishlistBtn = By.xpath("//button[@class='button-2 add-to-wishlist-button']");
+    private By addToCartBtn = By.xpath("//button[@class='button-2 product-box-add-to-cart-button' and text()='Add to cart']");
+
 
 
     public void clickSearchedProduct(By pd){
@@ -25,10 +27,6 @@ public class SearchPage {
     }
 
     public String productFound(){
-//        String pdXpath = "//a[text()='"+ pdName + "']";
-//        System.out.println(pdXpath);
-//        By productLink = By.xpath(pdXpath);
-//        System.out.println(driver.findElement(productLink).isDisplayed());
 
         try {
             Thread.sleep(2000);
@@ -56,6 +54,10 @@ public class SearchPage {
 
     public void clickWishlistBtn(){
         driver.findElement(wishlistBtn).click();
+    }
+
+    public void clickAddToCartBtn(){
+        driver.findElement(addToCartBtn).click();
     }
 
 
