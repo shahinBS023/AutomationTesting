@@ -28,10 +28,11 @@ public class LoginPage {
         driver.findElement(loginBtn).click();
     }
 
-    public void performLogin(String eml, String pass){
+    public void performLogin(String eml, String pass) throws InterruptedException {
         driver.findElement(emailBox).sendKeys(eml);
         driver.findElement(passBox).sendKeys(pass);
         driver.findElement(loginBtn).click();
+        Thread.sleep(2000);
 
     }
 

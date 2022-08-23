@@ -26,6 +26,11 @@ public class HomePage {
     private final By computerCategory = By.xpath("(//a[text()='Computers '])[1]");
     private final By noteBook = By.xpath("(//a[text()='Notebooks '])[1]");
     private final By noteBookHp = By.xpath("/html/body/div[6]/div[3]/div/div[3]/div/div[2]/div[2]/div[2]/div/div/div[4]/div/div[1]/a/img");
+    private final By electronicCategory = By.xpath("(//a[text()='Electronics '])[1]");
+    private final By cameraAndPhotoCategory = By.xpath("(//a[text()='Camera & photo '])[1]");
+    private final By shoppingCart = By.xpath("//span[@class='cart-label' and text()='Shopping cart']");
+    private final By recentlyViewedProducts = By.xpath("//a[text()='Recently viewed products']");
+
 
 
     public String getHomePageTitle(){
@@ -48,7 +53,7 @@ public class HomePage {
     }
 
     public void clickLogout(){
-        driver.findElement(loginUrl).click();
+        driver.findElement(logOutUrl).click();
     }
 
     public void sendSearchProductName(String pdName){
@@ -65,6 +70,7 @@ public class HomePage {
 
     public void hoverToComputer(){
         Actions action = new Actions(driver);
+        // hover to element
         WebElement e = driver.findElement(computerCategory);
         action.moveToElement(e).perform();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -77,15 +83,37 @@ public class HomePage {
     public void clickWishlist(){
         driver.findElement(wishlist).click();
     }
+    public void clickCameraCategory(){
+        driver.findElement(cameraAndPhotoCategory).click();
+    }
 
     public void clickHpNotebook(){
+        // Scroll to a element
         WebElement e = driver.findElement(noteBookHp);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView(true);", e);
         e.click();
     }
 
+    public void hoverToElectronics(){
+        Actions action = new Actions(driver);
+        // hover to element
+        WebElement e = driver.findElement(electronicCategory);
+        action.moveToElement(e).perform();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    }
 
+    public void clickShoppingCart(){
+        driver.findElement(shoppingCart).click();
+    }
+
+    public void clickRecentlyViewedProducts(){
+        // Scroll to a element
+        WebElement e = driver.findElement(recentlyViewedProducts);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true);", e);
+        e.click();
+    }
 
 
 

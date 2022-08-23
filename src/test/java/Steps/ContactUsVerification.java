@@ -56,7 +56,5 @@ public class ContactUsVerification {
     public void showASuccessMessage(String msg) {
         String actualMsg = contactUs.getSuccessMsg();
         Assert.assertTrue(actualMsg.contains(msg));
-
-
     }
 }
