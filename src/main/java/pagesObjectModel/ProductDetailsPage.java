@@ -3,8 +3,9 @@ package pagesObjectModel;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import utility.CommonMethods;
 
-public class ProductDetailsPage {
+public class ProductDetailsPage extends CommonMethods {
     private WebDriver driver;
     public ProductDetailsPage(WebDriver driver){
         this.driver = driver;
@@ -14,7 +15,9 @@ public class ProductDetailsPage {
     private By emailFriendBtn = By.xpath("//button[@class='button-2 email-a-friend-button']");
 
     public String productTitle(){
-        return driver.findElement(productTitleLocation).getText();
+        System.out.println("Single product: " + getText(productTitleLocation));
+        return getText(productTitleLocation);
+//        return driver.findElement(productTitleLocation).getText();
     }
 
     public void clickEmailFriendBtn(){

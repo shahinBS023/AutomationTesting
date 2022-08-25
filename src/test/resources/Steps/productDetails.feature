@@ -1,3 +1,4 @@
+@test
 Feature: Check Product Details
 
   Scenario: Goto home page and click product

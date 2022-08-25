@@ -1,4 +1,3 @@
-@test
 Feature: Check recently view product is present in recently view page
   Background: View a product
     Given Goto home page "https://localhost:44369/"

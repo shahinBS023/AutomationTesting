@@ -2,6 +2,7 @@ package pagesObjectModel;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import utility.CommonMethods;
 
 public class LoginPage {
 
@@ -15,17 +16,20 @@ public class LoginPage {
     private By passBox = By.xpath("//*[@id='Password']");
     private By loginBtn = By.xpath("//button[contains(@class,'login-button')]");
 
+    /* Initialize Common methods object */
+    CommonMethods methods = new CommonMethods();
 
     public void sendEmail(String eml){
-        driver.findElement(emailBox).sendKeys(eml);
+        methods.sendText(emailBox, eml);
     }
 
     public void sendPass(String pass){
-        driver.findElement(passBox).sendKeys(pass);
+        methods.sendText(passBox,pass);
     }
 
     public void clickLoginBtn(){
         driver.findElement(loginBtn).click();
+        System.out.println(methods.currentPageUrl());;
     }
 
     public void performLogin(String eml, String pass) throws InterruptedException {
@@ -35,6 +39,8 @@ public class LoginPage {
         Thread.sleep(2000);
 
     }
+
+
 
     public String getTitle(){
         return driver.getTitle();

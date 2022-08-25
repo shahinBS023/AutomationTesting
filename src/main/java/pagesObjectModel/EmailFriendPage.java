@@ -2,6 +2,7 @@ package pagesObjectModel;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import utility.CommonMethods;
 
 public class EmailFriendPage {
     WebDriver driver;
@@ -15,6 +16,7 @@ public class EmailFriendPage {
     private final By sendEmailBtn = By.xpath("//button[@class='button-1 send-email-a-friend-button']");
     private final By warningMsg = By.xpath("//li[text()='Only registered customers can use email a friend feature']");
     private final By confirmMessage = By.xpath("//*[@class='result']");
+
 
     public void sendFriendEmail(String email){
         driver.findElement(friendEmailBox).sendKeys(email);
