@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import pagesObjectModel.HomePage;
 import pagesObjectModel.LoginPage;
+import utility.CommonMethods;
 
 public class BasicFeature {
     WebDriver driver = DriverManager.getDriver();
@@ -15,10 +16,13 @@ public class BasicFeature {
     HomePage homePage = new HomePage(driver);
     LoginPage loginPage = new LoginPage(driver);
 
+    /* Initialize Common methods object */
+    CommonMethods methods = new CommonMethods();
 
     @Given("Goto home page {string}")
     public void gotoHomePage(String url) {
         driver.navigate().to(url);
+        System.out.println("URL: " + methods.currentPageUrl());
     }
 
     @Then("Check the home page title {string}")
@@ -32,6 +36,7 @@ public class BasicFeature {
     public void gotoLoginPage() {
         System.out.println("Login test");
         driver.navigate().to("https://localhost:44369/login");
+        System.out.println("URL: " + methods.currentPageUrl());
     }
 
     @Then("Give login credential {string} and {string}")

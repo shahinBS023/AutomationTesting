@@ -36,7 +36,6 @@ public class ProductDetailsFunctionality {
     @And("Check the product title {string}")
     public void checkTheProductTitle(String pdTitle) {
         String actualPDTitle = productDetailsPage.productTitle();
-        System.out.println(actualPDTitle + " " + pdTitle);
         Assert.assertTrue(actualPDTitle.contains(pdTitle));
     }
 

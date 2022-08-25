@@ -1,3 +1,4 @@
+@test
 Feature: Verify the group product details
 
   Scenario: Verify the group product details by the product title
